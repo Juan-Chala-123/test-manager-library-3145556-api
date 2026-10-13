@@ -41,4 +41,21 @@ interface LoanRepository
         int $page,
         int $size
     ): array;
+    
+    /**
+     * Busca líneas de préstamos vencidas (data-model.md §3, spec.md §9).
+     * 
+     * @param \DateTimeImmutable $now Fecha actual para comparar vencimientos
+     * @return array Líneas de préstamos vencidas
+     */
+    public function findOverdueItems(\DateTimeImmutable $now): array;
+    
+    /**
+     * Genera el reporte de libros más prestados (data-model.md §3, spec.md §10).
+     * 
+     * @param \DateTimeImmutable $from Fecha de inicio del periodo
+     * @param \DateTimeImmutable $to Fecha de fin del periodo
+     * @return array Fila por libro con cantidad de préstamos
+     */
+    public function findMostBorrowedReport(\DateTimeImmutable $from, \DateTimeImmutable $to): array;
 }
