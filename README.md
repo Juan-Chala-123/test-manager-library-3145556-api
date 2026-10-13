@@ -5,6 +5,16 @@
 
 Este repositorio es el **backend** de *Manager Library*, en **PHP con Laravel**. **Empieza vacío a propósito**: se construye en el fork de cada aprendiz.
 
+## Estado de la API
+
+La implementación sigue exclusivamente `docs/spec-php`: Laravel sobre PHP 8.5, PostgreSQL 16 y
+la base `/api/v1`. Los mensajes que recibe el cliente están en español; rutas, campos y códigos
+del contrato permanecen en inglés.
+
+La API expone salud, autenticación, categorías, libros, socios, préstamos, vencidos y reporte de
+libros más prestados. El administrador inicial se crea al arrancar desde `ADMIN_USERNAME` y
+`ADMIN_PASSWORD`; esas variables solo deben existir en el entorno local y nunca en Git.
+
 ## Instrucciones
 
 Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
